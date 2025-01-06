@@ -32,6 +32,41 @@ const products = [
     price: "$129.99",
     image: "/images/headphones.jpg",
   },
+  {
+    id: 4,
+    title: "Wireless Headphones",
+    description: "Experience superior sound quality on the go.",
+    price: "$129.99",
+    image: "/images/headphones.jpg",
+  },
+  {
+    id: 5,
+    title: "Wireless Headphones",
+    description: "Experience superior sound quality on the go.",
+    price: "$129.99",
+    image: "/images/headphones.jpg",
+  },
+  {
+    id: 6,
+    title: "Wireless Headphones",
+    description: "Experience superior sound quality on the go.",
+    price: "$129.99",
+    image: "/images/headphones.jpg",
+  },
+  {
+    id: 7,
+    title: "Wireless Headphones",
+    description: "Experience superior sound quality on the go.",
+    price: "$129.99",
+    image: "/images/headphones.jpg",
+  },
+  {
+    id: 8,
+    title: "Wireless Headphones",
+    description: "Experience superior sound quality on the go.",
+    price: "$129.99",
+    image: "/images/headphones.jpg",
+  },
 ];
 
 const FeaturedProducts: React.FC = () => {

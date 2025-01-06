@@ -10,8 +10,13 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+  const handleNavigateToRegister = () => {
+    navigate("/register");
+  };
   return (
     <motion.header
       className="bg-white shadow-lg sticky top-0 z-50"
@@ -117,6 +122,25 @@ const Header: React.FC = () => {
           <NavigationMenuIndicator />
           <NavigationMenuViewport />
         </NavigationMenu>
+
+        {/* Login and Register Buttons */}
+        <div className="flex space-x-4">
+          <motion.button
+            className="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Login
+          </motion.button>
+          <motion.button
+            className="px-4 py-2 bg-gray-100 text-indigo-500 rounded-md hover:bg-indigo-50 transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleNavigateToRegister}
+          >
+            Register
+          </motion.button>
+        </div>
       </div>
     </motion.header>
   );
