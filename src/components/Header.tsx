@@ -1,145 +1,83 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
 import { useNavigate } from "react-router-dom";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Input } from "./ui/input";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+
   const handleNavigateToRegister = () => {
     navigate("/register");
   };
+
+  const handleNavigateToLogin = () => {
+    navigate("/login");
+  };
+
+  const handleNavigateToProfilePage = () => {
+    navigate("/profile");
+  };
+
   return (
     <motion.header
-      className="bg-white shadow-lg sticky top-0 z-50"
+      className="bg-white sticky top-0 z-50 shadow-lg"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="container mx-auto flex justify-between items-center p-4">
-        {/* Logo */}
-        <motion.h1
-          className="text-2xl font-bold text-primary cursor-pointer"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Aniket's Shop
-        </motion.h1>
+        {/* Left Section - Logo and Menu */}
+        <div className="flex items-center space-x-6">
+          {/* Starbucks Logo */}
+          <img
+            src="/public/StarbucksLogo.png"
+            alt="Starbucks Logo"
+            className="h-12 w-12 cursor-pointer"
+            onClick={() => navigate("/")}
+          />
 
-        {/* Navigation Menu */}
-        <NavigationMenu>
-          <NavigationMenuList className="flex space-x-6">
-            {/* Dropdown Item 1 */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="hover:text-indigo-500">
-                Shop
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-white shadow-lg rounded-md">
-                <ul className="p-4">
-                  <li>
-                    <NavigationMenuLink
-                      href="/categories/men"
-                      className="block py-2 px-4 hover:bg-gray-100 rounded-md"
-                    >
-                      Men
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink
-                      href="/categories/women"
-                      className="block py-2 px-4 hover:bg-gray-100 rounded-md"
-                    >
-                      Women
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink
-                      href="/categories/accessories"
-                      className="block py-2 px-4 hover:bg-gray-100 rounded-md"
-                    >
-                      Accessories
-                    </NavigationMenuLink>
-                  </li>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+          {/* Navigation Menu */}
+          <nav className="hidden md:flex space-x-6 text-gray-800">
+            <a
+              href="/menu"
+              className="hover:text-green-600 transition-colors duration-300"
+            >
+              Menu
+            </a>
+            <a
+              href="/rewards"
+              className="hover:text-green-600 transition-colors duration-300"
+            >
+              Rewards
+            </a>
+            <a
+              href="/gift-cards"
+              className="hover:text-green-600 transition-colors duration-300"
+            >
+              Gift Cards
+            </a>
+          </nav>
+        </div>
 
-            {/* Dropdown Item 2 */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="hover:text-indigo-500">
-                About
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-white shadow-lg rounded-md">
-                <ul className="p-4">
-                  <li>
-                    <NavigationMenuLink
-                      href="/about"
-                      className="block py-2 px-4 hover:bg-gray-100 rounded-md"
-                    >
-                      Our Story
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink
-                      href="/team"
-                      className="block py-2 px-4 hover:bg-gray-100 rounded-md"
-                    >
-                      Team
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink
-                      href="/careers"
-                      className="block py-2 px-4 hover:bg-gray-100 rounded-md"
-                    >
-                      Careers
-                    </NavigationMenuLink>
-                  </li>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+        {/* Right Section - Input and Avatar */}
+        <div className="flex items-center space-x-4">
+          {/* Input Field */}
+          <div className="hidden md:block w-64">
+            <Input
+              placeholder="looking for something specific.."
+              className="rounded-2xl border-gray-300 shadow-sm focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
+            />
+          </div>
 
-            {/* Simple Link Item */}
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/contact"
-                className="hover:text-indigo-500"
-              >
-                Contact
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-
-          {/* Indicator and Viewport */}
-          <NavigationMenuIndicator />
-          <NavigationMenuViewport />
-        </NavigationMenu>
-
-        {/* Login and Register Buttons */}
-        <div className="flex space-x-4">
-          <motion.button
-            className="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          {/* Avatar */}
+          <Avatar
+            className="cursor-pointer"
+            onClick={handleNavigateToProfilePage}
           >
-            Login
-          </motion.button>
-          <motion.button
-            className="px-4 py-2 bg-gray-100 text-indigo-500 rounded-md hover:bg-indigo-50 transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handleNavigateToRegister}
-          >
-            Register
-          </motion.button>
+            <AvatarImage />
+            <AvatarFallback>AM</AvatarFallback>
+          </Avatar>
         </div>
       </div>
     </motion.header>

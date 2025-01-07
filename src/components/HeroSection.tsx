@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -11,7 +10,12 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-center py-20 text-white">
+    <section
+      className="bg-cover bg-center bg-no-repeat text-center py-20 text-white"
+      style={{
+        backgroundImage: "url('/public/HeroImage.jpg')",
+      }}
+    >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -24,7 +28,7 @@ const HeroSection: React.FC = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Welcome to <span className="text-yellow-300">ShopEase</span>
+          Welcome to <span className="text-yellow-300">Starbucks</span>
         </motion.h2>
         <motion.p
           className="text-lg mb-8 max-w-2xl mx-auto text-gray-200"
@@ -32,20 +36,22 @@ const HeroSection: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Discover amazing products at unbeatable prices. Shop with ease and
-          convenience!
+          <h3>Art and Science Of Coffee Brewing</h3>
         </motion.p>
         <motion.div
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
         >
-          <Button
-            className="px-8 py-4 text-lg font-semibold bg-yellow-400 text-gray-800 hover:bg-yellow-500 shadow-lg"
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 text-lg font-semibold bg-yellow-400 text-gray-800 hover:bg-yellow-500 shadow-lg rounded-2xl"
             onClick={handleNavigateToShopNow}
+            transition={{ duration: 0.3 }}
           >
-            Shop Now
-          </Button>
+            Buy Coffee
+          </motion.button>
         </motion.div>
       </motion.div>
     </section>

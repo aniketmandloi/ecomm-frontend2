@@ -13,59 +13,60 @@ import { Button } from "@/components/ui/button";
 const products = [
   {
     id: 1,
-    title: "Classic Sneakers",
-    description: "Comfortable and stylish sneakers for everyday wear.",
-    price: "$49.99",
-    image: "/images/sneakers.jpg",
+    title: "Classic Brew Coffee",
+    description: "Rich and smooth coffee, perfect for your morning routine.",
+    price: "$5.99",
+    image: "/public/coffee1.webp",
   },
   {
     id: 2,
-    title: "Leather Handbag",
-    description: "Elegant leather handbag perfect for any occasion.",
-    price: "$89.99",
-    image: "/images/handbag.jpg",
+    title: "Elegant Coffee Mug",
+    description: "Durable ceramic mug with a sleek Starbucks design.",
+    price: "$12.99",
+    image: "/public/mug.webp",
   },
   {
     id: 3,
-    title: "Wireless Headphones",
-    description: "Experience superior sound quality on the go.",
-    price: "$129.99",
-    image: "/images/headphones.jpg",
+    title: "Signature Coffee Beans",
+    description: "Whole bean coffee for the ultimate brewing experience.",
+    price: "$14.99",
+    image: "/public/coffee2.webp",
   },
   {
     id: 4,
-    title: "Wireless Headphones",
-    description: "Experience superior sound quality on the go.",
-    price: "$129.99",
-    image: "/images/headphones.jpg",
+    title: "Chocolate Coffee Bars",
+    description:
+      "Delicious coffee-infused chocolate bars for a quick energy boost.",
+    price: "$4.99",
+    image: "/public/coffeeBars.webp",
   },
   {
     id: 5,
-    title: "Wireless Headphones",
-    description: "Experience superior sound quality on the go.",
-    price: "$129.99",
-    image: "/images/headphones.jpg",
+    title: "Premium Coffee Mug Set",
+    description: "Set of two high-quality mugs, perfect for sharing your brew.",
+    price: "$24.99",
+    image: "/public/mug.webp",
   },
   {
     id: 6,
-    title: "Wireless Headphones",
-    description: "Experience superior sound quality on the go.",
-    price: "$129.99",
-    image: "/images/headphones.jpg",
+    title: "Caramel Latte Coffee",
+    description: "Sweet and creamy caramel latte blend for coffee lovers.",
+    price: "$6.99",
+    image: "/public/coffee1.webp",
   },
   {
     id: 7,
-    title: "Wireless Headphones",
-    description: "Experience superior sound quality on the go.",
-    price: "$129.99",
-    image: "/images/headphones.jpg",
+    title: "Espresso Roast Beans",
+    description: "Bold espresso beans for rich, full-bodied shots.",
+    price: "$15.99",
+    image: "/public/coffee2.webp",
   },
   {
     id: 8,
-    title: "Wireless Headphones",
-    description: "Experience superior sound quality on the go.",
-    price: "$129.99",
-    image: "/images/headphones.jpg",
+    title: "Vanilla Coffee Bars",
+    description: "Infused with hints of vanilla, perfect for a quick treat.",
+    price: "$5.49",
+    image: "/public/coffeeBars.webp",
   },
 ];
 
@@ -78,7 +79,7 @@ const FeaturedProducts: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Featured Products
+        Our Best Sellers
       </motion.h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {products.map((product, index) => (
@@ -96,7 +97,7 @@ const FeaturedProducts: React.FC = () => {
                 <motion.img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-40 object-cover mb-4 rounded-md"
+                  className="w-full h-50 object-cover mb-4 rounded-md"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
